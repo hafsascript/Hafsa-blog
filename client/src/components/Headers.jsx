@@ -9,7 +9,7 @@ export default function Headers() {
   return (
     <Navbar className='border-b-2'>
         <Link to="/" className='self-center whitespace-nowrap  font-semibold dark:text-white'>
-            <span className='px-2 py-1 bg-green-300 rounded-lg text-white text-m sm:text-3xl'>Hafsa</span>
+            <span className='px-2 py-1 bg-green-300 rounded-lg text-white text-md sm:text-3xl'>Hafsa</span>
             <span className='px-1 py-1 text-sm sm:text-xl'>Blog</span>
         </Link>
         <form>
