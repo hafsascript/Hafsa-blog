@@ -14,8 +14,10 @@ import {
   deleteFailure,
   signoutSuccess} from '../redux/user/userSlice.js';
 import {HiOutlineExclamationCircle} from 'react-icons/hi'
+import {Link} from 'react-router-dom'
+
 export default function DashboardProfile() {
-  const {currentUser, error} = useSelector(state=>state.user);
+  const {currentUser,loading} = useSelector(state=>state.user);
   const [imageFile, setImageFile] = useState(null);
   const [imageFileUrl, setImageFileUrl] = useState(null);
   const [imageUploadProgress , setImageUploadProgress] = useState(null);
@@ -117,12 +119,12 @@ export default function DashboardProfile() {
       });
       const data = await res.json();
       if (!res.ok){
-        dispatch(deleteFailure(data.message));
+        dispatch(deleteFailure('Something Went Wrong ... Try Again'));
       } else {
         dispatch(deleteSuccess(data));
       }
     }catch(error){
-      dispatch(deleteFailure(error.message));
+      dispatch(deleteFailure('Something Went Wrong ... Try Again'));
     }
   }
 
@@ -170,9 +172,17 @@ export default function DashboardProfile() {
         <TextInput type='text' id='username' placeholder='username' defaultValue={currentUser.username} onChange={handleChange}/>
         <TextInput type='email' id='email' placeholder='email' defaultValue={currentUser.email} onChange={handleChange}/>
         <TextInput type='password' id='password' placeholder='password' onChange={handleChange}/>
-        <Button type='submit' gradientMonochrome='purple' className='mt-4'>
-          Update
+        <Button type='submit' gradientMonochrome='purple' className='mt-4'
+        disabled={loading || imageFileUpload}>
+          {loading? 'Loading...' : 'Update'}
         </Button>
+        {currentUser.isAdmin && (
+          <Link to={'/create-post'}>
+            <Button type='button' gradientDuoTone='pinkToOrange' outline className='w-full mt-0.5'>
+              Create A Post
+            </Button>
+          </Link>
+        )}
       </form>
       <div className='text-red-700 flex justify-between mt-4 mb-9'>
         <span className='cursor-pointer' onClick={()=>setShowModal(true)}>Delete Account</span>
@@ -186,11 +196,6 @@ export default function DashboardProfile() {
       {userUpdateError && (
         <Alert color='failure' className='my-4'>
           {userUpdateError}
-        </Alert>
-      )}
-      {error && (
-        <Alert color='failure' className='my-4'>
-          {error}
         </Alert>
       )}
       <Modal show={showModal} onClose={()=>setShowModal(false)} popup size='md'>
