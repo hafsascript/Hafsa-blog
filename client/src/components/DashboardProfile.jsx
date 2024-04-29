@@ -178,7 +178,7 @@ export default function DashboardProfile() {
         </Button>
         {currentUser.isAdmin && (
           <Link to={'/create-post'}>
-            <Button type='button' gradientDuoTone='pinkToOrange' outline className='w-full mt-0.5'>
+            <Button type='button' gradientDuoTone='purpleToBlue' outline className='w-full mt-0.5'>
               Create A Post
             </Button>
           </Link>
