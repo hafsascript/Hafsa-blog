@@ -127,7 +127,7 @@ export default function UpdatePost() {
         </div>
         <div className='flex gap-4 items-center justify-between border-4
          border-green-500 border-dotted p-4 mt-2'>
-          <FileInput onChange={(e)=>setFile(e.target.files[0])} type='file' accept='image/*' required/>
+          <FileInput onChange={(e)=>setFile(e.target.files[0])} type='file' accept='image/*'/>
           <Button onClick={handleUploadImage} type='button' gradientDuoTone='tealToLime' size='sm' disabled={imageUploadProgress}>
             {imageUploadProgress ? (
               <div className='w-16 h-16'>
