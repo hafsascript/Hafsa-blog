@@ -123,6 +123,7 @@ export default function UpdatePost() {
             <option value="geography">Geography</option>
             <option value="tech">Tech</option>
             <option value="thoughts">Thoughts</option>
+            <option value="netherlands">Netherlands</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4

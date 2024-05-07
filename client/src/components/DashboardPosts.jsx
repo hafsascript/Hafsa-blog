@@ -91,7 +91,7 @@ export default function DashboardPosts() {
                   </Link>
                 </Table.Cell>
                 <Table.Cell>
-                  <Link className='font-medium text-emerald-500' to={`/post/${post.slug}`}>
+                  <Link className='font-medium text-pink-700' to={`/post/${post.slug}`}>
                     {post.title}
                   </Link>
                 </Table.Cell>
@@ -112,7 +112,7 @@ export default function DashboardPosts() {
           ))}
         </Table>
         {showMore && (
-          <button onClick={handleShowMore} className='w-full text-pink-500 self-center text-sm py-7'>Show More</button>
+          <button onClick={handleShowMore} className='w-full text-sky-800 self-center text-sm py-7'>Show More</button>
         )}
         </>
       ):(
