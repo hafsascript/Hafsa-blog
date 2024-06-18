@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import {Spinner,Button} from 'flowbite-react'
 import { Link } from 'react-router-dom';
+import CommentSection from '../components/CommentSection.jsx';
 
 export default function Post() {
     const {postSlug} = useParams();
@@ -58,6 +59,7 @@ export default function Post() {
         dangerouslySetInnerHTML={{__html : post && post.content}}>
 
         </div>
+        <CommentSection postId={post._id}/>
     </main>
   )
 }

@@ -13,12 +13,14 @@ import AdminPrivateRoute from './components/AdminPrivateRoute'
 import CreatePost from './pages/CreatePost'
 import UpdatePost from './pages/UpdatePost'
 import Post from './pages/Post'
+import ScrollTop from './components/ScrollTop'
 
 
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollTop/>
       <Headers/>
       <Routes>
         <Route path="/" element={<Homepage/>}/>
