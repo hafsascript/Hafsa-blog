@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import moment from 'moment';
 import {FaThumbsUp} from 'react-icons/fa'
 import { useSelector} from 'react-redux';
+import {Button, Textarea} from 'flowbite-react'
 
-export default function Comment({comment, onLike}) {
+export default function Comment({comment, onLike, onSaveEdits}) {
     const [user, setUser] = useState({});
     const {currentUser} = useSelector(state=>state.user);
+    const [editComment, setEditComment] = useState(false)
+    const [editedContent, setEditedContent] = useState(comment.content)
     console.log(user)
     useEffect(()=>{
         const getUser = async()=>{
@@ -23,6 +26,31 @@ export default function Comment({comment, onLike}) {
 
         getUser();
     },[comment])
+
+    const handleEdit = ()=>{
+        setEditComment(true);
+        setEditedContent(comment.content);
+    };
+
+    const handleSave = async()=>{
+        try{
+            const res = await fetch(`/api/comment/editComment/${comment._id}`,{
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: editedContent
+                })
+            })
+            if(res.ok) {
+                setEditComment(false)
+                onSaveEdits(comment, editedContent)
+            }
+        }catch(error){
+            console.log(error.message)
+        }
+    };
   return (
     <div className='flex p-5 border-b border-green-500 gap-3 '>
         <div className='flex-shrink-0'> 
@@ -38,19 +66,58 @@ export default function Comment({comment, onLike}) {
                         {moment(comment.createdAt).fromNow()}
                     </span>
                 </div>
-                <div>
-                    <p className=' mb-2'>{comment.content}</p>
-                </div>
-                <div className='flex text-xs items-center mt-2 gap-2 '>
-                    <button className={`text-neutral-400 hover:text-amber-500 ${currentUser && comment.likes.includes(currentUser._id) && '!text-amber-500'}`}
-                    type='button'
-                    onClick={()=>onLike(comment._id)}>
-                        <FaThumbsUp className='text-sm'/>
-                    </button>
-                    <p className='text-yellow-500'>
-                        {comment.numberOfLikes > 0 && comment.numberOfLikes + " " +(comment.numberOfLikes === 1 ? 'like' : 'likes') }
-                    </p>
-                </div>
+                {editComment ? (
+                    <>
+                        <Textarea
+                        className='mb-2 p-2 bg-green-100 rounded-sm resize-none'
+                        value={editedContent}
+                        rows='5'
+                        onChange={(e)=> setEditedContent(e.target.value)}/>
+                        <div className='flex justify-between my-1'>
+                            <Button
+                            type='button'
+                            size='sm'
+                            gradientMonochrome='success'
+                            onClick={handleSave}>
+                                Save
+                            </Button>
+                            <Button
+                            type='button'
+                            size='sm'
+                            gradientMonochrome='failure'
+                            outline
+                            onClick={()=>setEditComment(false)}>
+                                Cancel
+                            </Button>
+                        </div>
+                    </>
+                ) : (
+                <>
+                    <div>
+                        <p className=' mb-2'>{comment.content}</p>
+                     </div>
+                    <div className='flex text-xs items-center mt-2 gap-2 '>
+                        <button className={`text-neutral-400 hover:text-amber-500 ${currentUser && comment.likes.includes(currentUser._id) && '!text-amber-500'}`}
+                        type='button'
+                        onClick={()=>onLike(comment._id)}>
+                            <FaThumbsUp className='text-sm'/>
+                        </button>
+                        <p className='text-yellow-500'>
+                            {comment.numberOfLikes > 0 && comment.numberOfLikes + " " +(comment.numberOfLikes === 1 ? 'like' : 'likes') }
+                        </p>
+                        {
+                        currentUser && (currentUser._id === comment.userId || currentUser.isAdmin) && (
+                            <button type='button'
+                            onClick={handleEdit}
+                            className='text-gray-400 hover:text-purple-500 ml-3'>
+                                Edit
+                            </button>
+                        )
+                        }
+                    </div>
+                </>
+
+                )}
             </div>
         </div>
     </div>
