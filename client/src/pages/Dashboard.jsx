@@ -5,6 +5,7 @@ import DashboardProfile from '../components/DashboardProfile';
 import DashboardPosts from '../components/DashboardPosts';
 import DashboardUsers from '../components/DashboardUsers';
 import DashboardComments from '../components/DashboardComments';
+import DashboardTab from '../components/DashboardTab';
 
 export default function Dashboard() {
   const location = useLocation();
@@ -24,7 +25,10 @@ export default function Dashboard() {
       </div>
       
       {/* Profile, dashboard features */}
-      {tab === 'profile' && <DashboardProfile/>} 
+      {tab === 'profile' && <DashboardProfile/>}
+
+      {/* Dashboard */}
+      {tab === 'dashboard' && <DashboardTab/>}
 
       {/*Posts*/}
       {tab === 'posts' && <DashboardPosts/>} 

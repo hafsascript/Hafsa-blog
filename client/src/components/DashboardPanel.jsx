@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sidebar } from 'flowbite-react';
 import { HiArrowSmRight, HiDocumentText, HiOutlineUsers, HiUser, HiAnnotation } from 'react-icons/hi';
+import { GoGraph } from "react-icons/go";
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { signoutSuccess } from '../redux/user/userSlice';
@@ -42,6 +43,14 @@ export default function DashboardPanel() {
                         Profile
                     </Sidebar.Item>
                 </Link>
+                {currentUser.isAdmin && (
+                  <Link to='/dashboard?tab=dashboard'>
+                  <Sidebar.Item active={tab === 'dashboard' || !tab} icon={GoGraph} as='div'>
+                      Dashboard
+                  </Sidebar.Item>
+              </Link>
+              
+                )}
                 {currentUser.isAdmin && (
                   <Link to='/dashboard?tab=posts'>
                   <Sidebar.Item active={tab === 'posts'} icon={HiDocumentText} as='div'>
