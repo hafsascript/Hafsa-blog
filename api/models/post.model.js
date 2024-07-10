@@ -27,6 +27,14 @@ const postSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
+    editorChoice: {
+        type: Boolean,
+        default:false, 
+    },
+    popular: {
+        type: Boolean,
+        default:false, 
+    },
     
     
 }, {timestamps:true})
