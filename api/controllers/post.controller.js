@@ -29,6 +29,14 @@ export const create = async(req,res,next)=>{
 
 export const getposts = async(req,res,next)=>{
     try{
+        let editorChoice = req.query.editorChoice;
+        if (editorChoice===undefined|| editorChoice==='false'){
+        editorChoice = {$in: [false,true]};
+      }
+      let popular = req.query.popular;
+      if (popular===undefined|| popular==='false'){
+        popular = {$in: [false,true]};
+      }
         const startIndex = parseInt(req.query.startIndex) || 0;
         const limit = parseInt(req.query.limit) || 9;
         const sortDirection = req.query.order ==='asc' ? 1 :-1;
@@ -37,12 +45,14 @@ export const getposts = async(req,res,next)=>{
             ...(req.query.category && {category:req.query.category}),
             ...(req.query.slug && {slug:req.query.slug}),
             ...(req.query.postId && {_id:req.query.postId}),
+            ...(req.query.editorChoice && {editorChoice:req.query.editorChoice}),
+            ...(req.query.popular && {popular:req.query.popular}),
             ...(req.query.searchTerm && {
                 $or:[
                     {title: {$regex: req.query.searchTerm, $options:'i'}},
                     {content: {$regex: req.query.searchTerm, $options:'i'}},
                 ],
-            })}).sort({updatedAt: sortDirection}).skip(startIndex).limit(limit);
+            })}).sort({createdAt: sortDirection}).skip(startIndex).limit(limit);
 
             const totalPosts = await Post.countDocuments();
 

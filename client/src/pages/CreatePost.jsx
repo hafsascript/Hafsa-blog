@@ -91,11 +91,14 @@ export default function CreatePost() {
           <Select onChange={(e)=> setFormData({...formData, category: e.target.value})}
           required
           >
-            <option value="uncategorized">Select A Category</option>
-            <option value="science">Science</option>
-            <option value="geography">Geography</option>
-            <option value="tech">Tech</option>
-            <option value="thoughts">Thoughts</option>
+            <option value="Uncategorized">Select A Category</option>
+            <option value="Science">Science</option>
+            <option value="Geography">Geography</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Tech">Tech</option>
+            <option value="Thoughts">Thoughts</option>
+            <option value="Netherlands">Netherlands</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4
