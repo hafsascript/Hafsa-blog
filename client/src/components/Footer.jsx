@@ -20,7 +20,7 @@ export default function FooterCom() {
                             <Footer.Link href='/about' target='_blank' rel='noopener noreferrer'>
                                 Hafsa Blog
                             </Footer.Link>
-                            <Footer.Link href='/projects' target='_blank' rel='noopener noreferrer'>
+                            <Footer.Link href='/search' target='_blank' rel='noopener noreferrer'>
                                 Reads
                             </Footer.Link>
                         </Footer.LinkGroup>

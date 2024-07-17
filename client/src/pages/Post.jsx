@@ -62,7 +62,7 @@ export default function Post() {
     )
   return (
     <main className='p-3 flex flex-col max-w-6xl mx-auto min-h-screen'>
-        <h1 className='text-3xl mt-12 p-3 text-center font-mono max-w-2xl mx-auto lg:text-5xl'>{post && post.title}</h1>
+        <h1 className='text-3xl mt-12 p-3 font-serif text-center  max-w-4xl mx-auto lg:text-5xl'>{post && post.title}</h1>
         <Link to={`/search?category=${ post && post.category}`} className='self-center mt-5 mb-6'>
             <Button color='dark' className='p-4' size='s'>{post && post.category}</Button>
         </Link>

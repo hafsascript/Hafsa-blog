@@ -4,7 +4,6 @@ import About from './pages/About'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
 import Dashboard from './pages/Dashboard'
-import Projects from './pages/Projects'
 import Homepage from './pages/Homepage'
 import Headers from './components/Headers'
 import Footer from './components/Footer'
@@ -36,7 +35,6 @@ export default function App() {
           <Route path="/create-post" element={<CreatePost/>}/>
           <Route path="/update-post/:postId" element={<UpdatePost/>}/> 
         </Route>
-        <Route path="/projects" element={<Projects/>}/>
         <Route path="/post/:postSlug" element={<Post/>}/>
       </Routes>
       <Footer/>
