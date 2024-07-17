@@ -20,7 +20,8 @@ export default function PostCard({post}) {
             || post.category==='Geography'&& 'bg-orange-500 text-white p-2 rounded-3xl text-sm w-[120px]'
             || post.category==='Netherlands'&& 'bg-rose-500 text-white p-2 rounded-3xl text-sm w-[120px]'
             || post.category==='Uncategorized'&& 'bg-yellow-300 text-white p-2 rounded-3xl text-sm w-[120px]'
-            || post.category==='Thoughts'&& 'bg-red-600 text-white p-2 rounded-3xl text-sm w-[120px]'}>
+            || post.category==='Thoughts'&& 'bg-red-600 text-white p-2 rounded-3xl text-sm w-[120px]'
+            || post.category==='Entertainment'&& 'bg-teal-400 text-white p-2 rounded-3xl text-sm w-[120px]'}>
                 {post.category}</button>
             <Link className='z-10 group-hover:bottom-0
             absolute bottom-[-200px]

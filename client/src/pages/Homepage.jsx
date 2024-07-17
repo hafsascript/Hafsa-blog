@@ -88,43 +88,55 @@ export default function Homepage() {
         </div>
       </div>
       <div className='border-b border-b-slate-300 '>
-        <div className='flex flex-wrap gap-2 sm:flex-row  sm:justify-between mb-11'>
-          <Button className=' bg-blue-400 dark:bg-blue-400 w-32 h-16 my-5  rounded-tl-3xl mx-auto shadow-lg'>
+        <div className='flex flex-wrap gap-4 p-5 sm:flex-row mb-11'>
+          <Link to='/search?category=Tech' className='mx-auto'>
+            <Button className=' bg-blue-400 dark:bg-blue-400 w-32 h-16 my-5  rounded-tl-3xl mx-auto shadow-lg'>
+              <div className='flex flex-col items-center'>
+                <span className='text-l mb-1 '>Tech</span>
+                <GiLaptop className='h-5 w-5 '/>
+              </div>
+            </Button>
+          </Link>
+          <Link to='/search?category=Travel' className='mx-auto'>
+            <Button className='bg-pink-400 dark:bg-pink-400  w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
+              <div className='flex flex-col items-center'>
+                <span className='text-l mb-1 '>Travel</span>
+                <GiPalmTree className='h-5 w-5 '/>
+              </div> 
+            </Button>
+          </Link>
+          <Link to='/search?category=Science' className='mx-auto'>
+            <Button className='bg-green-400 dark:bg-green-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
+              <div className='flex flex-col items-center'>
+                <span className='text-l mb-1 '>Science</span>
+                <GiMaterialsScience className='h-5 w-5'/>
+              </div>
+            </Button>
+          </Link>
+          <Link to='/search?category=Geography' className='mx-auto'>
+            <Button className='bg-orange-400 dark:bg-orange-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
+              <div className='flex flex-col items-center'>
+                <span className='text-l mb-1 '>Geography</span>
+                <IoMdGlobe className='h-5 w-5'/>
+              </div>
+            </Button>
+          </Link>  
+          <Link to='/search?category=Food' className='mx-auto'>
+            <Button className='bg-purple-400 dark:bg-purple-400 w-32 h-16  my-5 rounded-tl-3xl mx-auto shadow-lg'>
+              <div className='flex flex-col items-center'>
+                <span className='text-l mb-1'>Food</span>
+                <GiFrenchFries className='h-5 w-5'/>
+              </div> 
+            </Button>
+          </Link>
+          <Link to='/search?category=Netherlands' className='mx-auto'>
+            <Button className='bg-rose-400 dark:bg-rose-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
             <div className='flex flex-col items-center'>
-              <span className='text-l mb-1 '>Tech</span>
-              <GiLaptop className='h-5 w-5 '/>
+              <span className='text-l mb-1'>Netherlands</span>
+              <FaRegFlag className='h-5 w-5'/>
             </div>
-          </Button>
-          <Button className='bg-pink-400 dark:bg-pink-400  w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
-            <div className='flex flex-col items-center'>
-              <span className='text-l mb-1 '>Travel</span>
-              <GiPalmTree className='h-5 w-5 '/>
-             </div> 
-          </Button>
-          <Button className='bg-green-400 dark:bg-green-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
-            <div className='flex flex-col items-center'>
-              <span className='text-l mb-1 '>Science</span>
-              <GiMaterialsScience className='h-5 w-5'/>
-            </div>
-          </Button>
-          <Button className='bg-orange-400 dark:bg-orange-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
-            <div className='flex flex-col items-center'>
-              <span className='text-l mb-1 '>Geography</span>
-              <IoMdGlobe className='h-5 w-5'/>
-            </div>
-          </Button>
-          <Button className='bg-purple-400 dark:bg-purple-400 w-32 h-16  my-5 rounded-tl-3xl mx-auto shadow-lg'>
-            <div className='flex flex-col items-center'>
-              <span className='text-l mb-1'>Food</span>
-              <GiFrenchFries className='h-5 w-5'/>
-            </div> 
-          </Button>
-          <Button className='bg-rose-400 dark:bg-rose-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
-          <div className='flex flex-col items-center'>
-            <span className='text-l mb-1'>Netherlands</span>
-            <FaRegFlag className='h-5 w-5'/>
-          </div>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </div>
       <div className='flex flex-col sm:flex-row gap-2 sm:gap-7'>

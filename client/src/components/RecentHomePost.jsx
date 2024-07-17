@@ -18,6 +18,7 @@ export default function RecentHomePost({post}) {
             || post.category==='Geography'&& 'text-orange-500 text-sm'
             || post.category==='Netherlands'&& 'text-rose-500 text-sm'
             || post.category==='Thoughts'&& 'text-red-600 text-sm'
+            || post.category==='Entertainment'&& 'text-teal-400 text-sm'
             || post.category==='Uncategorized'&& 'text-yellow-500 text-sm'}>{post.category}</p>
           </div>
           <div className='font-bold dark:text-white'>

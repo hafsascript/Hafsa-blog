@@ -112,7 +112,7 @@ export default function Search() {
     };
   return (
     <div className='flex flex-col md:flex-row'>
-        <div className='min-h-screen p-5 md:p-10 border-b md:border-r border-slate-500'>
+        <div className='md:min-h-screen p-5 md:p-10 border-b md:border-b-0 md:border-r border-slate-500'>
             <form className='flex flex-col gap-7'
             onSubmit={handleSubmit}>
                 <div className='flex items-center gap-2'>
@@ -145,6 +145,7 @@ export default function Search() {
                         <option value="Tech">Tech</option>
                         <option value="Thoughts">Thoughts</option>
                         <option value="Netherlands">Netherlands</option>
+                        <option value="Entertainment">Entertainment</option>
                     </Select>
                 </div>
                 <Button type='submit'
