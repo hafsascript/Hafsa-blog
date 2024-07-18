@@ -83,8 +83,8 @@ export default function DashboardTab() {
                         rounded-full text-5xl p-2 shadow-lg'/>
                 </div>
                 <div className='flex gap-2 text-sm'>
-                    <span className='text-green-500 flex items-center'>
-                        <HiArrowNarrowUp/>
+                    <span className={lastMonthUsers === 0 ? 'text-red-500 flex items-center' : 'text-green-500 flex items-center'}>
+                        <HiArrowNarrowUp className={lastMonthUsers === 0 ? 'hidden' : 'block'}/>
                         {lastMonthUsers}
                     </span>
                     <div className='text-slate-500'>
@@ -104,8 +104,8 @@ export default function DashboardTab() {
                         rounded-full text-5xl p-2 shadow-lg'/>
                 </div>
                 <div className='flex gap-2 text-sm'>
-                    <span className='text-green-500 flex items-center'>
-                        <HiArrowNarrowUp/>
+                    <span className={lastMonthPosts === 0 ? 'text-red-500 flex items-center' : 'text-green-500 flex items-center'}>
+                        <HiArrowNarrowUp classname={lastMonthPosts === 0 ? 'hidden' : 'block'}/>
                         {lastMonthPosts}
                     </span>
                     <div className='text-slate-500'>
@@ -125,8 +125,8 @@ export default function DashboardTab() {
                         rounded-full text-5xl p-2 shadow-lg'/>
                 </div>
                 <div className='flex gap-2 text-sm'>
-                    <span className='text-green-500 flex items-center'>
-                        <HiArrowNarrowUp/>
+                    <span className={lastMonthComments === 0 ? 'text-red-500 flex items-center' : 'text-green-500 flex items-center'}>
+                        <HiArrowNarrowUp className={lastMonthComments === 0 ? 'hidden' : 'block'}/>
                         {lastMonthComments}
                     </span>
                     <div className='text-slate-500'>
