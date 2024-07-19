@@ -24,7 +24,7 @@ export default function RecentHomePost({post}) {
           <div className='font-bold dark:text-white'>
             {post.title}
           </div>
-          <div className='max-w-2xl dark:text-gray-500 mx-auto w-full post-content line-clamp-2 md:line-clamp-3'
+          <div className='max-w-2xl dark:text-gray-500 mx-auto w-full post-content line-clamp-3 break-all overflow-hidden text-ellipsis'
         dangerouslySetInnerHTML={{__html : post && post.content}}>
 
         </div>

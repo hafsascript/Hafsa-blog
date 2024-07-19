@@ -23,7 +23,7 @@ export default function EditorAndPopularPost({post}) {
                         {post.title}
                 </Link>
             </div>
-            <div className='max-w-lg post-content  line-clamp-1  text-sm'
+            <div className='max-w-lg post-content  line-clamp-1 break-all md:line-clamp-1 overflow-hidden text-sm'
                 dangerouslySetInnerHTML={{__html : post && post.content}}>
 
             </div>
