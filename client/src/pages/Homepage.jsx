@@ -74,14 +74,14 @@ export default function Homepage() {
     <div className='min-h-screen '>
       <div className='  border-b border-b-slate-300  flex flex-col sm:flex-row mb-16'>
         <div className='flex-1 p-7 '>
-          <img className=' h-60 sm:h-96 w-full border-2  border-green-400 p-2 my-2 sm:my-12 '
+          <img className=' h-60 sm:h-60  lg:h-96 w-full border-2  border-green-400 p-2 my-2 sm:my-12 '
           src={berry}></img>
         </div>
         <div className=' flex-1 flex flex-col mt-1 py-1 mx-5 sm:mt-14  sm:py-7 ' >
          
           <span className='text-6xl text-green-400 mb-5 mx-auto sm:mx-0'> Hi, HafsaBerry Here</span>
-          <span className='hidden my-0 sm:block sm:px-3 sm:mt-8 sm:mb-8  text-3xl text-teal-600 mx-auto sm:mx-0'>gotta read it to believe it!</span>
-          <span className='hidden my-0  sm:block sm:px-3 sm:mt-5 text-2xl text-teal-800 dark:text-white mx-auto sm:mx-0'>My blog is the perfect place to explore and read about all that life offers us... all the things that you have always wanted to know more about... and all that you never heard of</span>
+          <span className='hidden my-0 lg:block sm:px-3 sm:mt-8 sm:mb-8  text-3xl text-teal-600 mx-auto sm:mx-0'>gotta read it to believe it!</span>
+          <span className='hidden my-0  lg:block lg:px-3 lg:mt-5 text-2xl text-teal-800 dark:text-white mx-auto lg:mx-0'>My blog is the perfect place to explore and read about all that life offers us... all the things that you have always wanted to know more about... and all that you never heard of</span>
           <Link to='/about'>
             <Button className='  w-60 mt-4 mb-5 mx-auto sm:mx-0 ' gradientDuoTone='greenToBlue' size='md'>Learn More About Us</Button>
           </Link>

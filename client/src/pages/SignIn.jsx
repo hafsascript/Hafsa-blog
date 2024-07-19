@@ -46,14 +46,12 @@ export default function SignIn() {
     <div className='min-h-screen mt-20'>
       <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5'>
         {/* left */}
-        <div className='flex-1'>
+        <div className='flex-1 mb-5'>
         <Link to="/" className='  font-bold dark:text-white'>
-            <span className='px-2 py-1 bg-green-300 rounded-lg text-white text-7xl'>Hafsa</span>
-            <span className='px-1 py-1 text-5xl'>Blog</span>
+            <span className='px-2 py-1 bg-green-300 rounded-lg text-white text-7xl '>Hafsa</span>
+            <span className='px-1 py-1 text-5xl '>Blog</span>
         </Link>
-          <p className='text-sm mt-5'>
-            This is Hafsa Blog
-          </p>
+          
         </div>
         {/* right */}
 
