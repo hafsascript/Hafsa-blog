@@ -136,8 +136,10 @@ export default function CommentSection({postId}) {
         ):(
         <div className='flex gap-1 my-7 text-md'>
             
-            <Link  className='hover:text-sky-500 underline text-blue-500'to={'/sign-in'}>Sign In</Link>
-            <p className='text-sky-500'>To Comment</p>
+            <Link className='mx-auto' to={'/sign-in'}>
+                <Button outline pill size='lg' gradientDuoTone='greenToBlue'>Sign In To Comment</Button>
+            </Link>
+            
         </div>
 
         )}

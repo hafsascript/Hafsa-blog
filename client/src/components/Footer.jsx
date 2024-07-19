@@ -39,10 +39,10 @@ export default function FooterCom() {
                     <div>
                         <Footer.Title title='Legal' className='mt-6 text-lg'/>
                         <Footer.LinkGroup col>
-                            <Footer.Link href='#'>
+                            <Footer.Link href='/about'>
                                 Terms & Conditions
                             </Footer.Link>
-                            <Footer.Link href='#'>
+                            <Footer.Link href='/about'>
                                 Policy
                             </Footer.Link>
                         </Footer.LinkGroup>
