@@ -45,14 +45,3 @@ body{
     color:aqua;
 }
 
-@media(max-width:390px){
-    .post-content p,
-    .post-content h1,
-    .post-content h2
-    {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-    }
-}
