@@ -13,7 +13,7 @@ export default function RecentHomePost({post}) {
             <p className='text-slate-500 text-sm'>{new Date(post.createdAt).toLocaleDateString()}</p>
             <p className={post.category==='Tech'&& 'text-blue-500 text-sm'
             || post.category==='Travel'&& 'text-pink-500 text-sm'
-            || post.category==='Food'&& 'sm:text-purple-500 xs:text-red-700 text-sm'
+            || post.category==='Food'&& 'text-purple-500 text-sm'
             || post.category==='Science'&& 'text-green-500 text-sm'
             || post.category==='Geography'&& 'text-orange-500 text-sm'
             || post.category==='Netherlands'&& 'text-rose-500 text-sm'
