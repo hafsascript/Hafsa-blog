@@ -139,7 +139,7 @@ export default function Homepage() {
           </Link>
         </div>
       </div>
-      <div className='flex flex-col sm:flex-row gap-2 sm:gap-7'>
+      <div className='flex flex-col lg:flex-row gap-2 sm:gap-7'>
         <div>
           <h1 className='text-4xl p-6 mt-5 mb-1 sm:ml-14'>Recent Articles:</h1>
           <div className='sm:ml-14 flex flex-col gap-14 sm:gap-10 mt-1 mb-4 sm:mb-14'>
