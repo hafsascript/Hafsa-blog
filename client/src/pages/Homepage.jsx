@@ -106,7 +106,7 @@ export default function Homepage() {
             </Button>
           </Link>
           <Link to='/search?category=Science' className='mx-auto'>
-            <Button className='bg-green-400 dark:bg-green-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
+            <Button className='xs:bg-lime-500 sm:bg-green-400 dark:bg-green-400 w-32 h-16 my-5 rounded-tl-3xl mx-auto shadow-lg'>
               <div className='flex flex-col items-center'>
                 <span className='text-l mb-1 '>Science</span>
                 <GiMaterialsScience className='h-5 w-5'/>
@@ -151,7 +151,7 @@ export default function Homepage() {
         <div className='flex flex-col gap-2 sm:gap-14 mr-7 '>
           <div className='flex flex-col mt-1 sm:mt-10 p-5'>
             <div className='flex flex-row items-center gap-3'>
-              <h1 className='text-orange-500 dark:text-orange-400 text-md'>What's hot</h1>
+              <h1 className='text-orange-500  dark:text-orange-400 text-md'>What's hot</h1>
               <ImFire className='text-orange-400'/>
             </div>
             <h1 className='text-3xl font-semibold'>Trending</h1>
