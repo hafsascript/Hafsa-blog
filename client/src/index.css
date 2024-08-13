@@ -45,3 +45,43 @@ body{
     color:aqua;
 }
 
+.post-homecontent p {
+    margin-bottom: 0.5rem;
+    
+}
+
+.post-homecontent h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin: 1.5rem 0;
+    
+    
+}
+
+.post-homecontent h2 {
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    margin: 1.5rem 0;
+    
+}
+
+.post-homecontent a {
+    color:lightseagreen;
+    text-decoration: none;
+    
+}
+
+.post-homecontent a:hover{
+    text-decoration: underline;
+}
+
+.dark .post-homecontent a{
+    color:aqua;
+}
+
+@media(max-width:385px){
+    .post-homecontent
+    {
+        display: none;
+    }}
