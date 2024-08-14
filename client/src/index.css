@@ -80,7 +80,7 @@ body{
     color:aqua;
 }
 
-@media(max-width:385px){
+@media(max-height:670px){
     .post-homecontent
     {
         display: none;
